@@ -370,3 +370,18 @@ Did you mean?  @post):
   Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
   Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
   Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (26.7ms)
+
+
+Started POST "/posts" for 100.35.223.31 at 2018-07-15 02:50:35 +0000
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0n5+Ef+dRVkfGGnGjX9NZpGSZMbBmUTF2Di2CCSAq/UBQHhUWGqkzLptUS9716w9OnR7Im7/qQP8scNvwqJDIQ==", "title"=>"new  title", "description"=>"new desc", "commit"=>"Submit Post"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "new  title"], ["description", "new desc"], ["created_at", "2018-07-15 02:50:35.213318"], ["updated_at", "2018-07-15 02:50:35.213318"]]
+  [1m[36m (3.2ms)[0m  [1mcommit transaction[0m
+Redirected to http://67.205.152.27:54142/posts/7
+Completed 302 Found in 12ms (ActiveRecord: 4.5ms)
+
+
+Started GET "/posts/7" for 100.35.223.31 at 2018-07-15 02:50:35 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"7"}
